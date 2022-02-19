@@ -1,0 +1,32 @@
+[
+    {
+        "name": "HENRIQUE",
+        "cpf": "99999999990",
+        "salary": 14156.55,
+        "bornDate": "1993-10-16"
+    },
+    {
+        "name": "GUSTAVO",
+        "cpf": "99999999990",
+        "salary": 14156.55,
+        "bornDate": "1993-10-16"
+    },
+    {
+        "name": "RUBENS",
+        "cpf": "99999999990",
+        "salary": 14156.55,
+        "bornDate": "1993-10-16"
+    },
+    {
+        "name": "LEO",
+        "cpf": "99999999990",
+        "salary": 14156.55,
+        "bornDate": "1993-10-16"
+    },
+    {
+        "name": "MARCO",
+        "cpf": "99999999990",
+        "salary": 14156.55,
+        "bornDate": "1993-10-16"
+    }
+]
