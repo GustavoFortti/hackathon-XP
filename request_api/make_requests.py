@@ -22,15 +22,9 @@ class MakeRequests:
 		return res
 		
 
-	def users(self, limit=None, offset=None):
-
-		if limit:
-			url = self.base_url + f'/users/?limit={limit}'
-		elif offset:
-			url = self.base_url + f'/users/?limit={limit}&offset={offset}'
-		else:
-			url = self.base_url + '/users/'
-
+	def users(self, user_name):
+		url = self.base_url + f'/users/{user_name}'
+		print("URL =>", url)
 		resp = requests.get(url, headers=self.headers)
 
 		return resp

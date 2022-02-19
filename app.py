@@ -30,12 +30,15 @@ requests = MakeRequests(token, credentials)
 def user_auth():
   req_data = request.get_json()
   authorized = req_data["authorized"]
+  user_name = req_data["user_name"]
 
   if authorized and type(authorized) == bool:
-    response = requests.try_request(requests.users, 1)
-    return jsonify(json.loads(response.text))
+    response = requests.try_request(requests.users, user_name)
+    data = json.loads(response.text)
+    blockchain.operate_data(data, user_name, authorized)
+
+    return "Your data was shared successfully"
   else:
-    pass
     return jsonify("User did not authorize data sharing")
 
 @app.route('/mine_block', methods = ['GET'])

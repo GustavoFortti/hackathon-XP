@@ -60,49 +60,14 @@ class Blockchain:
         previous_hash = self.hash(previous_block)
         block = self.create_block(proof, previous_hash)
 
-    def operate_data(self, user, permission):
-        f = open('./users.json')
-        data = json.load(f)
-        f.close()
-        result = list(filter(lambda x: x["name"] == user, data))[0]
-        result["permission"] = permission
-        self.mem_pool.append(result)
-        return list(filter(lambda x: x["name"] == user, data))
+    def operate_data(self, data, user, permission):
+        print("DATA ", type(data))
+        print("USERNAME", user)
+        data["permission"] = permission
+        self.mem_pool.append(data)
+        return data
 
 
     def get_user_data_from_chain(self):
         # função que percorre o blockchain
         pass
-
- 
-if __name__ == '__main__':
-
-    blockchain = Blockchain()
-
-
-    print(blockchain.chain)
-
-    blockchain.mine_block()
-    time.sleep(5)
-    print(blockchain.chain)
-    
-    blockchain.operate_data("MARCO", True)
-    blockchain.operate_data("HENRIQUE", True)
-    # dados caem no mem_pool a cima e abaixo são minerados
-    blockchain.mine_block()
-    time.sleep(3)
-    print(blockchain.chain)
-
-    blockchain.operate_data("GUSTAVO", True)
-    blockchain.operate_data("LEO", True)
-    # dados caem no mem_pool a cima e abaixo são minerados
-    blockchain.mine_block()
-    time.sleep(3)
-    print(blockchain.chain)
-
-    blockchain.operate_data("MARCO", False)
-    blockchain.operate_data("HENRIQUE", False)
-    # dados caem no mem_pool a cima e abaixo são minerados
-    blockchain.mine_block()
-    time.sleep(3)
-    print(blockchain.chain)
