@@ -1,0 +1,199 @@
+
+
+[
+    {
+        "data_transaction": [],
+        "index": 1,
+        "previous_hash": "0",
+        "proof": 1,
+        "timestamp": "2022-02-20 09:46:47.712856"
+    },
+    {
+        "data_transaction": [],
+        "index": 2,
+        "previous_hash": "b2801f9be52e492cece18d8213c8d94a60ed7f26c5c23668d52457897f2a9b47",
+        "proof": 533,
+        "timestamp": "2022-02-20 09:46:47.713618"
+    },
+    {
+        "data_transaction": [
+            {
+                "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                "permission": true,
+                "stock_operations": [
+                    {
+                        "acquisitionDate": "09/04/2012",
+                        "bankId": "itau",
+                        "identity": "itau-stocks-3228156331",
+                        "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                        "risk": 80,
+                        "ticker": "PETR4",
+                        "value": 180,
+                        "volume": 289
+                    },
+                    {
+                        "acquisitionDate": "21/11/2019",
+                        "bankId": "santander",
+                        "identity": "santander-stocks-5842899377",
+                        "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                        "risk": 78,
+                        "ticker": "GAA77",
+                        "value": 150,
+                        "volume": 8960
+                    },
+                    {
+                        "acquisitionDate": "20/12/2012",
+                        "bankId": "itau",
+                        "identity": "itau-stocks-2609242375",
+                        "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                        "risk": 64,
+                        "ticker": "PETR4",
+                        "value": 62,
+                        "volume": 199
+                    },
+                    {
+                        "acquisitionDate": "04/11/2017",
+                        "bankId": "bradesco",
+                        "identity": "bradesco-stocks-3144601092",
+                        "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                        "risk": 96,
+                        "ticker": "PETR4",
+                        "value": 35,
+                        "volume": 591
+                    }
+                ]
+            }
+        ],
+        "index": 3,
+        "previous_hash": "d47494e06bb983add5112dedefdab9469b1bd38696ac9833781abb8b28dbb73e",
+        "proof": 45293,
+        "timestamp": "2022-02-20 09:46:49.792210"
+    },
+    {
+        "data_transaction": [
+            {
+                "permission": true,
+                "stock_operation": {
+                    "acquisitionDate": "20/02/2022",
+                    "bankId": "itau",
+                    "identity": "itau-stocks-0666737286",
+                    "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                    "risk": 19,
+                    "ticker": "GAA77",
+                    "value": 54,
+                    "volume": 555
+                }
+            },
+            {
+                "permission": true,
+                "stock_operation": {
+                    "acquisitionDate": "20/02/2022",
+                    "bankId": "bradesco",
+                    "identity": "bradesco-stocks-8315001117",
+                    "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                    "risk": 54,
+                    "ticker": "CAB91",
+                    "value": 69,
+                    "volume": 762
+                }
+            },
+            {
+                "permission": true,
+                "stock_operation": {
+                    "acquisitionDate": "20/02/2022",
+                    "bankId": "itau",
+                    "identity": "itau-stocks-6682936981",
+                    "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                    "risk": 15,
+                    "ticker": "GAA77",
+                    "value": 70,
+                    "volume": 1480
+                }
+            },
+            {
+                "permission": true,
+                "stock_operation": {
+                    "acquisitionDate": "20/02/2022",
+                    "bankId": "bradesco",
+                    "identity": "bradesco-stocks-1187282569",
+                    "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                    "risk": 20,
+                    "ticker": "PETR4",
+                    "value": 75,
+                    "volume": 6090
+                }
+            },
+            {
+                "permission": true,
+                "stock_operation": {
+                    "acquisitionDate": "20/02/2022",
+                    "bankId": "bradesco",
+                    "identity": "bradesco-stocks-6543034847",
+                    "name": "e36555a31029453d543a02d2fdd12dede51f6feab59e4105362204476168195b",
+                    "risk": 17,
+                    "ticker": "GAA77",
+                    "value": 67,
+                    "volume": 958
+                }
+            }
+        ],
+        "index": 4,
+        "previous_hash": "1aa17b962c2da8046f7150c967fa7556f01675f4a375a14a94872b15f2af191f",
+        "proof": 21391,
+        "timestamp": "2022-02-20 09:46:51.829611"
+    },
+    {
+        "data_transaction": [
+            {
+                "name": "ab593b7158237dddc6ec182713529e975dda70e455c4c5b6daabb39f46105deb",
+                "permission": true,
+                "stock_operations": [
+                    {
+                        "acquisitionDate": "31/07/2016",
+                        "bankId": "santander",
+                        "identity": "santander-stocks-5437389478",
+                        "name": "ab593b7158237dddc6ec182713529e975dda70e455c4c5b6daabb39f46105deb",
+                        "risk": 79,
+                        "ticker": "GAA77",
+                        "value": 43,
+                        "volume": 273
+                    },
+                    {
+                        "acquisitionDate": "31/12/2012",
+                        "bankId": "xp",
+                        "identity": "xp-stocks-3296012832",
+                        "name": "ab593b7158237dddc6ec182713529e975dda70e455c4c5b6daabb39f46105deb",
+                        "risk": 32,
+                        "ticker": "CAB91",
+                        "value": 42,
+                        "volume": 5560
+                    },
+                    {
+                        "acquisitionDate": "17/03/2014",
+                        "bankId": "xp",
+                        "identity": "xp-stocks-2410404501",
+                        "name": "ab593b7158237dddc6ec182713529e975dda70e455c4c5b6daabb39f46105deb",
+                        "risk": 62,
+                        "ticker": "CAB91",
+                        "value": 45,
+                        "volume": 172
+                    },
+                    {
+                        "acquisitionDate": "16/09/2016",
+                        "bankId": "itau",
+                        "identity": "itau-stocks-8721327888",
+                        "name": "ab593b7158237dddc6ec182713529e975dda70e455c4c5b6daabb39f46105deb",
+                        "risk": 29,
+                        "ticker": "CAB91",
+                        "value": 65,
+                        "volume": 2200
+                    }
+                ]
+            }
+        ],
+        "index": 5,
+        "previous_hash": "1095387ecda99d563c3895a9227ce62ed6f7006749698106da57cfd3c74582f5",
+        "proof": 8018,
+        "timestamp": "2022-02-20 09:46:53.845352"
+    }
+]
