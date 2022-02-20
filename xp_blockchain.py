@@ -9,7 +9,6 @@ class Blockchain:
         self.mem_pool = []
         self.create_block(proof=1, previous_hash='0')
 
-
     def create_block(self, proof, previous_hash):
         block = {
             'index': len(self.chain) + 1,
@@ -73,7 +72,6 @@ class Blockchain:
         self.mem_pool.append(data)
         return data
 
-
     def start_share_data(self, user, permission, data):
         result = dict(
         name = hashlib.sha256(user.encode()).hexdigest(),
@@ -87,14 +85,13 @@ class Blockchain:
 
     def track_user_data(self, permission):
         if len(self.users) > 0:
-            lista = [hashlib.sha256(name.encode()).hexdigest() for name in self.users]
-            print(lista)
+            user_list = [hashlib.sha256(name.encode()).hexdigest() for name in self.users]
             for i in range(5):
                 result = dict(
                 permission = permission,
-                stock_operation = gen_stock(initial_offer=False, names=lista)
+                stock_operation = gen_stock(initial_offer=False, names=user_list)
                 )
-                result["name"] = gen_distinct(lista)
+                result["name"] = gen_distinct(user_list)
             self.mem_pool.append(result)
 
         return self.mem_pool
@@ -102,31 +99,3 @@ class Blockchain:
     def get_user_data_from_chain(self, user):
         # função que percorre o blockchain
         pass
-
-
-if __name__ == '__main__':
-
-    blockchain = Blockchain()
-    # print(blockchain.track_user_data(permission=True))
-    #print(blockchain.start_share_data("Rosemberg", permission=True))
-
-    pretty_print = lambda dados: print(json.dumps(dados, sort_keys=True, indent=4))
-    names = ["marco", "henrique", "gustavo", "leonardo", "rubens"]
-    last_names = ["reis", "lima", "menezes"]
-
-    def operate_block():
-        blockchain.mine_block()
-        time.sleep(2)
-        pretty_print(blockchain.chain)
-        print("##################################################")
-
-    def blockchain_lives():
-        operate_block()
-        while 1:
-            fake_user = f"{gen_distinct(names)} {gen_distinct(last_names)}"
-            blockchain.start_share_data(fake_user, permission=True)
-            operate_block()
-            blockchain.track_user_data(permission=True)
-            operate_block()
-
-    blockchain_lives()

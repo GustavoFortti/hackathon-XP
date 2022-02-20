@@ -1,6 +1,5 @@
 from get_token import GetToken
 import requests
-import json
 
 class MakeRequests:
 	def __init__(self, token, credentials):
@@ -21,18 +20,13 @@ class MakeRequests:
 			return res
 		return res
 		
-
 	def users(self, user_name=None):
 		url = self.base_url + f'/users/{user_name}'
-		print("URL =>", url)
 		resp = requests.get(url, headers=self.headers)
 		return resp
 	
 	def user_investments(self, bank=None, user_name=None):
-		print(bank)
-		print(user_name)
 		url = self.base_url + f"/bank/{bank}/users/{user_name}/investments"
-		print("URL =>", url)
 		resp = requests.get(url, headers=self.headers)
 		return resp
 

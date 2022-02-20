@@ -10,22 +10,19 @@ from request_api.get_token import GetToken
 from request_api.make_requests import MakeRequests
 import json
 
+app = Flask(__name__)
+blockchain = Blockchain()
+
 credentials = {
   'client_id': os.getenv('CLIENT_ID'),
   'client_secret': os.getenv('CLIENT_SECRET')
 }
-
-node_address = str(uuid4()).replace('-', '')
-
-app = Flask(__name__)
-blockchain = Blockchain()
 
 token = GetToken(
   credentials["client_id"],
   credentials["client_secret"]
 ).access_token
 requests = MakeRequests(token, credentials)
-
 
 @app.route("/user_auth", methods = ['POST'])
 def user_auth():
@@ -52,7 +49,7 @@ def user_auth():
 def simulate_stream_operations():
   blockchain.track_user_data(True)
   blockchain.mine_block()
-  return jsonify({"Message": "teste"})
+  return jsonify({"Message": "Mock data generated successfully"})
 
 @app.route('/mine_block', methods = ['GET'])
 def mine_block():

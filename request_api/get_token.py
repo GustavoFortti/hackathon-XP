@@ -23,5 +23,4 @@ class GetToken:
           self.access_token = json.loads(resp.text)["access_token"]
         except Exception as e:
           print("Exception =>", e)
-          print(e.with_traceback.__annotations__)
           print(Exception.with_traceback)
