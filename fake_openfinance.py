@@ -29,7 +29,6 @@ def gen_stock(initial_offer=True, **kwargs):
         
     bank = gen_distinct(banks)
     return {
-        "name": name,
         "identity": f"{bank}-stocks-{gen_str_num(10)}",
         "bankId": f"{bank}",
         "ticker": f"{gen_distinct(tickers)}",

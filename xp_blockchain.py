@@ -66,39 +66,37 @@ class Blockchain:
         dados_usuario = [block["data_transaction"] for block in self.chain]
         return dados_usuario
 
-    def operate_data(self, user, permission):
-        f = open('./users.json')
-        data = json.load(f)
-        f.close()
-        print("USERNAME", user)    
-        result = list(filter(lambda x: x["name"] == user, data))[0]
-        result["permission"] = permission
-        self.mem_pool.append(result)
-        return list(filter(lambda x: x["name"] == user, data))
+    def operate_data(self, data, user, permission):
+        print("DATA ", type(data))
+        print("USERNAME", user)
+        data["permission"] = permission
+        self.mem_pool.append(data)
+        return data
 
 
-    def start_share_data(self, user, permission):
-        name = hashlib.sha256(user.encode()).hexdigest()
-        #name = user
+    def start_share_data(self, user, permission, data):
         result = dict(
-        name = name,
+        name = hashlib.sha256(user.encode()).hexdigest(),
         permission = permission,
-        stock_operations = [gen_stock(initial_offer=True, name=name)for i in range(randint(2,5))]
+        stock_operations = data
         )
-        self.users.append(name)
+        self.users.append(result["name"])
         self.mem_pool.append(result)
         return result
 
 
     def track_user_data(self, permission):
-    
-        lista = [hashlib.sha256(nome.encode()).hexdigest() for nome in ["Marco", "Marcio"]] if len(self.users) == 0 else self.users
-        for i in range(5):
-            result = dict(
-            permission = permission,
-            stock_operation = gen_stock(initial_offer=False, names=lista)
-            )
+        if len(self.users) > 0:
+            lista = [hashlib.sha256(name.encode()).hexdigest() for name in self.users]
+            print(lista)
+            for i in range(5):
+                result = dict(
+                permission = permission,
+                stock_operation = gen_stock(initial_offer=False, names=lista)
+                )
+                result["name"] = gen_distinct(lista)
             self.mem_pool.append(result)
+
         return self.mem_pool
 
     def get_user_data_from_chain(self, user):

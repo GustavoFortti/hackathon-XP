@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from crypt import methods
 from xmlrpc.client import boolean
 from flask import  Flask, jsonify, request
 from uuid import uuid4
@@ -31,15 +32,27 @@ def user_auth():
   req_data = request.get_json()
   authorized = req_data["authorized"]
   user_name = req_data["user_name"]
+  bank = req_data["bank"]
 
   if authorized and type(authorized) == bool:
-    response = requests.try_request(requests.users, user_name)
+    params = {
+      "user_name": user_name,
+      "bank": bank
+    }
+    response = requests.try_request(requests.user_investments, **params)
     data = json.loads(response.text)
-    blockchain.operate_data(data, user_name, authorized)
-
-    return "Your data was shared successfully"
+    stocks = data["stocks"]
+    blockchain.start_share_data(user_name, authorized, stocks)
+    blockchain.mine_block()
+    return jsonify({"Message": "Your data was shared successfully"})
   else:
-    return jsonify("User did not authorize data sharing")
+    return jsonify({"Message": "User did not authorize data sharing"})
+
+@app.route("/simulate_stream_operations", methods = ["GET"])
+def simulate_stream_operations():
+  blockchain.track_user_data(True)
+  blockchain.mine_block()
+  return jsonify({"Message": "teste"})
 
 @app.route('/mine_block', methods = ['GET'])
 def mine_block():

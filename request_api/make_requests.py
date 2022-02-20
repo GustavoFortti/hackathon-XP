@@ -12,8 +12,8 @@ class MakeRequests:
 			'User-Agent': 'PostmanRuntime/7.26.8'
 		}
 
-	def try_request(self, req, *params):
-		res = req(*params)
+	def try_request(self, req, **params):
+		res = req(**params)
 		if res.status_code == 401:
 			token= GetToken(self.credentials["client_id"], self.credentials["client_secret"]).access_token
 			self.headers["Authorization"] = f"Bearer {token}"
@@ -22,9 +22,17 @@ class MakeRequests:
 		return res
 		
 
-	def users(self, user_name):
+	def users(self, user_name=None):
 		url = self.base_url + f'/users/{user_name}'
 		print("URL =>", url)
 		resp = requests.get(url, headers=self.headers)
-
 		return resp
+	
+	def user_investments(self, bank=None, user_name=None):
+		print(bank)
+		print(user_name)
+		url = self.base_url + f"/bank/{bank}/users/{user_name}/investments"
+		print("URL =>", url)
+		resp = requests.get(url, headers=self.headers)
+		return resp
+
